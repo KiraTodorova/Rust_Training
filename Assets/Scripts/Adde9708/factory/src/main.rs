@@ -1,6 +1,6 @@
-pub mod armys;
-pub mod factory;
-pub mod weapons;
+mod armys;
+mod factory;
+mod weapons;
 use crate::armys::armys::army;
 use factory::factory::factory;
 
