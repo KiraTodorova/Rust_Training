@@ -36,7 +36,7 @@ pub mod factory {
 
         let weapons_per_army: f32 = num_weapons / num_armys as f32;
 
-        for (i, army) in armys.iter_mut().enumerate() {
+        for (i, _army) in armys.iter_mut().enumerate() {
             let start: f32 = i as f32 * weapons_per_army as f32;
             let end: f32 = if i as f32 == num_armys - 1 as f32 {
                 num_weapons
