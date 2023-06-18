@@ -19,12 +19,12 @@ pub mod factory {
         armys.push(army);
         // Just create a few new variables to keep track of the number of armys
         // and number of weapons and the weapons per army
-        let num_armys: usize = armys.len();
-        let num_weapons: usize = weapons.len();
-        let weapons_per_army: usize = num_weapons / num_armys;
+        let num_armys: f32 = armys.len() as f32;
+        let num_weapons: f32 = weapons.len() as f32;
+        let weapons_per_army: f32 = num_weapons / num_armys as f32;
         //TODO: finish this loop
         for (i, army) in armys.iter_mut().enumerate() {
-            let start = i * weapons_per_army;
+            let start: f32 = i as f32 * weapons_per_army as f32;
         }
     }
 }
