@@ -50,11 +50,7 @@ pub mod factory {
                 .flat_map(|weapons: &Vec<String>| weapons.iter().take(5).cloned())
                 .collect();
 
-            println!(
-                "Assigning weapons {:?} to army {}",
-                army_weapons,
-                army.as_ptr() as i32 + 1
-            );
+            println!("Assigning weapons {:?} to army {:?}", army_weapons, i + 1);
         }
     }
 }
