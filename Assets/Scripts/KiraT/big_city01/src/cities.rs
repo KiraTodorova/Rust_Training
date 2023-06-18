@@ -12,7 +12,7 @@ pub fn city<'a>(city_name : &'a str, population : &'a str, workers : &'a str, jo
     + "\n"
     + "Which " + population[2] + "are workers"
     + "\n"
-    + "And " + population[3] + "are jpbless"
+    + "And " + population[3] + "are jobless"
     + "\n"
     + "The average age is: " + population[4]
     + "\n"
