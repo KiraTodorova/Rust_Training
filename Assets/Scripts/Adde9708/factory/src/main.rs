@@ -5,6 +5,7 @@ mod weapons;
 use factory::factory::factory;
 
 fn main() {
-    factory::<Vec<String>, fn(&Vec<String>) -> Vec<String>>();
-    println!("Hello, world!");
+    for _ in 0..50 {
+        factory::<Vec<String>, fn(&Vec<String>) -> Vec<String>>();
+    }
 }
