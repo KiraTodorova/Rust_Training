@@ -1,0 +1,16 @@
+[package]
+name = "big_city01"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+authors = ["Kira T. <kira.todorova99@gmail.com>", "adde9708 <adde.edvin@gmail.com>"]
+description = "We use this package to walk through the basics of Rust"
+readme = "README.md"
+repository = "https://github.com/KiraTodorova/Rust_Training"
+license-file = "LICENSE.txt"
+keywords = ["training", "testing", "learning", "rust"]
+categories = ["command-print-line"]
+
+[dependencies]
