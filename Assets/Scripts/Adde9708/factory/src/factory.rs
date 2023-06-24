@@ -1,59 +1,36 @@
 pub mod factory {
 
-    use crate::armys::armys::army;
-    use crate::weapons::weapons::weapons;
+    use crate::armys::armys::create_army;
+    use crate::weapons::weapons::create_weapons;
 
-    pub fn factory<T, F>()
-    where
-        T: Clone,
-        F: Fn(&Vec<String>) -> Vec<String>,
-    {
-        /* Declare the army varible as a Vec containing i32's
-        and assign it the army function to take return value from it */
-        let army: Vec<i32> = army(50_000, 20);
-        let mut armys: Vec<Vec<i32>> = vec![army];
-        /*Same as above, but with a Vec containing &str
-          instead of i32's and assign it to the weapons function which takes
-          an array of &str values
-        */
+    pub fn factory() {
+        let weapon_name: [&str; 4] = ["Rifles", "Snipers", "Pistols", "Light machine guns"];
+        let mut weapons: [&str; 4] = [""; 4];
+        create_weapons(weapon_name, &mut weapons);
 
-        let weapon: Vec<String> = weapons([
-            "Rifle".to_string(),
-            "Sniper".to_string(),
-            "LMG".to_string(),
-            "Pistol".to_string(),
-        ]);
-        let weapons: Vec<Vec<String>> = vec![weapon];
+        let soldiers_per_army: i32 = 10000;
+        let vehicles_per_army: i32 = 20;
 
-        // Just create a few new variables to keep track of the number of armys
-        // and number of weapons and the weapons per army
+        let num_armies: i32 = 50;
+        let num_weapons: i32 = 4;
+        let weapons_per_army: f32 = num_weapons as f32 / num_armies as f32;
 
-        let num_armys: f32 = armys.len() as f32;
-
-        let num_weapons: f32 = weapons.len() as f32;
-
-        let weapons_per_army: f32 = num_weapons / num_armys;
-        let cloned_armys = armys.clone();
-
-        for (i, _army) in armys.iter_mut().enumerate() {
-            let start: f32 = i as f32 * weapons_per_army;
-            let end: f32 = if i as f32 == num_armys - 1_f32 {
+        for i in 0..num_armies {
+            let start: i32 = (i as f32 * weapons_per_army) as i32;
+            let end: i32 = if i == num_armies - 1 {
                 num_weapons
             } else {
-                (i + 1) as f32 * weapons_per_army
+                ((i + 1_i32) as f32 * weapons_per_army) as i32
             };
-            let weapons_slice: &[Vec<String>] = &weapons[start as usize..end as usize];
 
-            let army_weapons: Vec<String> = weapons_slice
-                .iter()
-                .flat_map(|weapons: &Vec<String>| weapons.iter().take(5).cloned())
-                .collect();
+            let army_name: String = format!("Army {} - Weapons {} to {}", i + 1, start + 1, end);
+            create_army(soldiers_per_army, vehicles_per_army, &army_name);
 
-            println!("Assigning weapons {:?} to army {:?}", army_weapons, i + 1);
-            println!(
-                "The factory has built this many {:?} weapons and this many armys  {:?}",
-                weapons, cloned_armys
-            );
+            print!("Assigned weapons: ");
+            for j in start..end {
+                print!("{} ", weapons[j as usize]);
+            }
+            println!("\n");
         }
     }
 }

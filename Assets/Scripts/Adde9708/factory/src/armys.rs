@@ -1,7 +1,8 @@
 pub mod armys {
 
-    pub fn army(soldier: i32, vehicles: i32) -> Vec<i32> {
-        let army: [i32; 2] = [soldier, vehicles];
-        army.to_vec()
+    pub fn create_army(num_soldiers: i32, num_vehicles: i32, army_name: &str) {
+        println!("Creating army: {}", army_name);
+        println!("Number of soldiers: {}", num_soldiers);
+        println!("Number of vehicles: {}", num_vehicles);
     }
 }

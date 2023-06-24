@@ -1,6 +1,8 @@
 pub mod weapons {
 
-    pub fn weapons(weapon_name: [String; 4]) -> Vec<String> {
-        weapon_name.to_vec()
+    pub fn create_weapons<'a>(weapon_name: [&'a str; 4], weapons: &mut [&'a str; 4]) {
+        for i in 0..4 {
+            weapons[i] = weapon_name[i];
+        }
     }
 }
