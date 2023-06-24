@@ -33,7 +33,7 @@ pub mod factory {
             let army_name: String = format!("Army {} - Weapons {} to {}", i + 1, start + 1, end);
             create_army(soldiers_per_army, vehicles_per_army, &army_name);
 
-            // Assign the weapons to the army groups
+            // Print the assigned weapons
             print!("Assigned weapons: ");
             for j in start..end {
                 print!("{} ", weapons[j as usize]);
