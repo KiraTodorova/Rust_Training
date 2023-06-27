@@ -30,7 +30,9 @@ pub mod factory {
             };
 
             // Create an army name for all the created armies
-            let army_name: String = format!("Army {} - Weapons {} to {}", i + 1, start + 1, end);
+            let army_name: String =
+                format!("Army {} - Weapons {} to {}", i + 1_i32, start + 1_i32, end);
+
             create_army(soldiers_per_army, vehicles_per_army, &army_name);
 
             // Print the assigned weapons
