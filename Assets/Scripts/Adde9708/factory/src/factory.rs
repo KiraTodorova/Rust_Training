@@ -3,6 +3,14 @@ pub mod factory {
     use crate::armys::armys::create_army;
     use crate::weapons::weapons::create_weapons;
 
+    fn assigned_weapons(start: i32, end: i32, weapons: [&str; 4]) {
+        print!("Assigned weapons: ");
+        for j in start..end {
+            print!("{} ", weapons[j as usize]);
+            println!("\n");
+        }
+    }
+
     pub fn factory() {
         /*
            Create the weapons by creating the array of weapons to pass into
@@ -15,7 +23,7 @@ pub mod factory {
         // Set some needed variables
         let soldiers_per_army: i32 = 10000;
         let vehicles_per_army: i32 = 20;
-        let num_armies: i32 = 50;
+        let num_armies: i32 = 64;
         let num_weapons: i32 = 4;
         let weapons_per_army: f32 = num_weapons as f32 / num_armies as f32;
 
@@ -36,11 +44,7 @@ pub mod factory {
             create_army(soldiers_per_army, vehicles_per_army, &army_name);
 
             // Print the assigned weapons
-            print!("Assigned weapons: ");
-            for j in start..end {
-                print!("{} ", weapons[j as usize]);
-            }
-            println!("\n");
+            assigned_weapons(start, end, weapons);
         }
     }
 }
