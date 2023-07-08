@@ -23,7 +23,7 @@ pub mod factory {
         // Set some needed variables
         let soldiers_per_army: i32 = 10000;
         let vehicles_per_army: i32 = 20;
-        let num_armies: i32 = 64;
+        let num_armies: i32 = 50;
         let num_weapons: i32 = 4;
         let weapons_per_army: f32 = num_weapons as f32 / num_armies as f32;
 
